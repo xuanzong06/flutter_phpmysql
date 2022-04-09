@@ -61,10 +61,10 @@ class _HomeRouteState extends State<HomeRoute> {
     try {
       var map = Map<String, dynamic>();
       map['action'] = "flutter";
-      // map['first_name'] = firstName;
-      // map['last_name'] = lastName;
+      map['first_name'] = firstName;
+      map['last_name'] = lastName;
       // final response = await http.post(Uri. parse('http://localhost:8888/testdb.php'), body: map);
-      final response = await http.post(Uri. parse('http://192.168.31.167:8888/testdb.php'));
+      final response = await http.post(Uri. parse('http://192.168.31.167:8888/testdb.php'), body: map);
       print('addEmployee Response: ${response.body}');
       if (200 == response.statusCode) {
         return response.body;
